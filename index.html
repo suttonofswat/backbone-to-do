@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Backbone to do</title>
+</head>
+<body>
+	<form id="toDoform">
+		<input type="text" placeholder="To Do" id="toDoInput">
+		<button>Submit</button>
+	</form>
+
+	<section id="toDoList"></section>
+	<script type="text/javascript" src="scripts/bundle.js"></script>
+	<script type="text/template" id="list-row">
+		<li><%= item%> <button>edit</button></li>
+	</script>
+</body>
+</html>

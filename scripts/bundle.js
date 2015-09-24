@@ -12666,7 +12666,7 @@ var toDoModel = require('../models/toDoModel.js');
 
 module.exports = Backbone.Collection.extend({
 	model: toDoModel,
-	url: 'http://tiyfe.herokuapp.com/collections/Backbone-todo'
+	url: 'http://tiyfe.herokuapp.com/collections/Backbone-todo1'
 
 });
 
@@ -12723,10 +12723,10 @@ $(document).ready(function () {
 var Backbone = require('backbone');
 module.exports = Backbone.Model.extend({
 	defaults: {
-		item: '',
-		incomplete: true
+		item: ''
+
 	},
-	urlRoot: 'http://tiyfe.herokuapp.com/collections/Backbone-todo',
+	urlRoot: 'http://tiyfe.herokuapp.com/collections/Backbone-todo1',
 	idAttribute: '_id'
 
 });
@@ -12738,39 +12738,20 @@ var Backbone = require('backbone');
 var _ = require('backbone/node_modules/underscore');
 var toDoModel = require('../models/toDoModel.js');
 
-// module.exports = Backbone.View.extend({
-// 	tagName: 'button',
+var DocumentRow = Backbone.View.extend({
+  //no idea what to do here! trying to add in a li element
+  tagName: "li",
 
-// 	initialize: function(){
-// 		_.bindAll (
-// 			this,
-// 			'onLikeButtonClick',
-// 			'render'
-// 		);
-// 		console.log('the link button was just created');
-// 		this.model = new LikeModel();
-// 		this.$el.on('click', this.onLikeButtonClick);
-// 		this.model.on('change', this.render);
-// 		this.render();
-// 	},
-// 	render: function(){
-// 		var numLikes = this.model.get('likes');
-// 		if (numLikes === 1){
-// 			this.$el.html('1 Like');
-// 		}
-// 		else{
-// 			this.$el.html(numLikes+' Likes');
-// 		}
-// 	},
-// 	onLikeButtonClick: function(){
-// 		console.log('like button was clicked');
-// 		var newNumberOfLikes = this.model.get('likes')+1;
-// 		this.model.set({
-// 			in: newNumberOfLikes
-// 		});
-// 	}
+  //whenever i try to put in:
+  template: _.template($('#list-row').html()),
+  //it keeps giving me an error of "cannot replace". I dont even know what the error means!
+  initialize: function initialize() {
+    this.listenTo(this.model, "change", this.render);
+  },
 
-// });
+  render: function render() {}
+
+});
 
 },{"../models/toDoModel.js":6,"backbone":1,"backbone/node_modules/underscore":2}]},{},[5])
 

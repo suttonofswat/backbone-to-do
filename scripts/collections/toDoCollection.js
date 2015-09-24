@@ -5,6 +5,6 @@ var toDoModel = require('../models/toDoModel.js');
 
 module.exports = Backbone.Collection.extend({
 	model: toDoModel,
-	url:  'http://tiyfe.herokuapp.com/collections/Backbone-todo'
+	url:  'http://tiyfe.herokuapp.com/collections/Backbone-todo1'
 
 });
